@@ -9,6 +9,8 @@ const Home = () => {
         { title: 'Third Blog', body: 'Blog Blog Blog', author: 'Kelly', id:3}
     ])
 
+    const [name, setName] = useState('mario');
+
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id);
         setBlogs(newBlogs);
@@ -16,7 +18,7 @@ const Home = () => {
 
     useEffect(() => {
         console.log('use effect ran')
-    });
+    }, []); //useful for every render, dependency array
 
     return ( 
         <div className="home">
